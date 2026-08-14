@@ -11,6 +11,27 @@ abstract class Employee{
     public String getName(){
         return name;
     }
+    public int getId(){
+        return id;
+    }
+
+    public abstract double calculateSalary();
+
+    @Override
+    public String toString(){
+        return "Employee[name=" +name+" , id="+id+",salary="+calculateSalary()+"]";
+
+    }
+
+}
+class fullTimeEmployee extends Employee{
+      private double monthlySalary;
+
+      public fullTimeEmployee(String name , int id, double monthlySalary){
+           super(name , id);
+
+           this.monthlySalary = monthlySalary;
+      }
 }
 
 
