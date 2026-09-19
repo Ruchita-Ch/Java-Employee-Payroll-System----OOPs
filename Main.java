@@ -26,10 +26,10 @@ abstract class Employee{
     }
 
 }
-class fullTimeEmployee extends Employee{
+class FullTimeEmployee extends Employee{
       private double monthlySalary;
 
-      public fullTimeEmployee(String name , int id, double monthlySalary){
+      public FullTimeEmployee(String name , int id, double monthlySalary){
            super(name , id);
 
            this.monthlySalary = monthlySalary;
@@ -101,6 +101,18 @@ class PayrollSystem{
 
 public class Main{
     public static void main(String[] args){
-        System.out.println("Hello World!");
+      PayrollSystem payrollSystem = new PayrollSystem(); 
+      FullTimeEmployee emp1 = new FullTimeEmployee("Ruchita" , 1, 900000);
+      PartTimeEmployee emp2 = new PartTimeEmployee("Shinchan" , 2,80,9000);
+ 
+       
+     payrollSystem.addEmployee(emp1);
+     payrollSystem.addEmployee(emp2);
+     System.out.println("Initial Employee Details: ");
+     payrollSystem.displayEmployees();
+     System.out.println("Removing Employee: ");
+     payrollSystem.removeEmployee(2);
+     System.out.println("Remaining Employee Details: ");
+     payrollSystem.displayEmployees();
     }
 }
