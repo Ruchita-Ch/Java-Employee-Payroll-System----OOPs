@@ -1,3 +1,5 @@
+import java.util.*;
+
 abstract class Employee{
     private String name;
     private int id;
@@ -54,6 +56,21 @@ class PartTimeEmployee extends Employee {
      public double calculateSalary(){
         return hoursWorked * hourlyRate;
      }
+} 
+
+
+class PayrollSystem{ 
+
+    private ArrayList<Employee> employeeList;
+
+
+    public PayrollSystem(){
+        employeeList = new ArrayList<>();
+    }
+
+    public void addEmployee(Employee employee){
+        employeeList.add(employee);
+    }
 } 
 
 
